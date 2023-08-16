@@ -4,7 +4,10 @@ const inputBtns = document.querySelectorAll("button");
 const clearBtn = document.getElementById("clear-btn");
 
 function sendNumberValue(number) {
-  calculatorDisplay.textContent = number;
+  // if current display value is 0, replace it, if not add number
+  const displayValue = calculatorDisplay.textContent;
+  calculatorDisplay.textContent =
+    displayValue === 0 ? number : displayValue + number;
 }
 
 // Add event-listeners for numbers, operators, decimal button
