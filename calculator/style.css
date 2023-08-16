@@ -27,3 +27,11 @@ body {
   align-items: center;
   justify-content: flex-end;
 }
+
+.calculator-display h1 {
+  margin: 0;
+  padding: 25px;
+  font-size: 45px;
+  font-family: "Lucida Console", sans-serif;
+  font-weight: 100;
+}
