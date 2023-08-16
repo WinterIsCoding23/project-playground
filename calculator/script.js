@@ -8,10 +8,16 @@ let operatorValue = "";
 let awaitingNextValue = false;
 
 function sendNumberValue(number) {
-  // if current display value is 0, replace it, if not add number
-  const displayValue = calculatorDisplay.textContent;
-  calculatorDisplay.textContent =
-    displayValue === "0" ? number : displayValue + number;
+  // Replace current display value if first value is entered
+  if (awaitingNextValue) {
+    calculatorDisplay.textContent = number;
+    awaitingNextValue = false;
+  } else {
+    // if current display value is 0, replace it, if not add number
+    const displayValue = calculatorDisplay.textContent;
+    calculatorDisplay.textContent =
+      displayValue === "0" ? number : displayValue + number;
+  }
 }
 
 function addDecimal() {
@@ -26,8 +32,15 @@ function useOperator(operator) {
   // Assign first value if there is no value:
   if (!firstValue) {
     firstValue = currentValue;
+  } else {
+    console.log("currentValue", currentValue);
   }
+  awaitingNextValue = true;
   operatorValue = operator;
+
+  console.log("firstValue", firstValue);
+  console.log("currentValue", currentValue);
+  console.log("operator", operator);
 }
 
 // Add event-listeners for numbers, operators, decimal button
@@ -47,9 +60,12 @@ inputBtns.forEach((inputBtn) => {
   }
 });
 
-// Reset Display
+// Reset all values & Display
 function resetAll() {
   calculatorDisplay.textContent = "0";
+  firstValue = 0;
+  operatorValue = "";
+  awaitingNextValue = false;
 }
 
 // Event Listener
