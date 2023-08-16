@@ -1,12 +1,24 @@
+// ----------------------------- Declaration of variables -----------------------------
 const calculatorDisplay = document.querySelector("h1");
 // inputsBtns -> array of all buttons
 const inputBtns = document.querySelectorAll("button");
 const clearBtn = document.getElementById("clear-btn");
 
+// Calculate first and second values depneding on operator
+const calculate = {
+  "/": (firstNumber, secondNumber) => firstNumber / secondNumber,
+  "*": (firstNumber, secondNumber) => firstNumber * secondNumber,
+  "+": (firstNumber, secondNumber) => firstNumber + secondNumber,
+  "-": (firstNumber, secondNumber) => firstNumber - secondNumber,
+  "=": (firstNumber, secondNumber) => secondNumber,
+};
+
+// ----------------------------- Mutable variables -----------------------------
 let firstValue = 0;
 let operatorValue = "";
 let awaitingNextValue = false;
 
+// ----------------------------- Functions -----------------------------
 function sendNumberValue(number) {
   // Replace current display value if first value is entered
   if (awaitingNextValue) {
@@ -28,15 +40,6 @@ function addDecimal() {
     calculatorDisplay.textContent = `${calculatorDisplay.textContent}.`;
   }
 }
-
-// Calculate first and second values depneding on operator
-const calculate = {
-  "/": (firstNumber, secondNumber) => firstNumber / secondNumber,
-  "*": (firstNumber, secondNumber) => firstNumber * secondNumber,
-  "+": (firstNumber, secondNumber) => firstNumber + secondNumber,
-  "-": (firstNumber, secondNumber) => firstNumber - secondNumber,
-  "=": (firstNumber, secondNumber) => secondNumber,
-};
 
 function useOperator(operator) {
   const currentValue = Number(calculatorDisplay.textContent);
@@ -61,6 +64,15 @@ function useOperator(operator) {
   operatorValue = operator;
 }
 
+// Reset all values & Display
+function resetAll() {
+  calculatorDisplay.textContent = "0";
+  firstValue = 0;
+  operatorValue = "";
+  awaitingNextValue = false;
+}
+
+// ----------------------------- Event-listeners -----------------------------
 // Add event-listeners for numbers, operators, decimal button
 inputBtns.forEach((inputBtn) => {
   if (inputBtn.classList.length === 0) {
@@ -77,14 +89,6 @@ inputBtns.forEach((inputBtn) => {
     });
   }
 });
-
-// Reset all values & Display
-function resetAll() {
-  calculatorDisplay.textContent = "0";
-  firstValue = 0;
-  operatorValue = "";
-  awaitingNextValue = false;
-}
 
 // Event Listener
 clearBtn.addEventListener("click", resetAll);
