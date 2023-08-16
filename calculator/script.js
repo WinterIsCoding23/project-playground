@@ -3,6 +3,10 @@ const calculatorDisplay = document.querySelector("h1");
 const inputBtns = document.querySelectorAll("button");
 const clearBtn = document.getElementById("clear-btn");
 
+let firstValue = 0;
+let operatorValue = "";
+let awaitingNextValue = false;
+
 function sendNumberValue(number) {
   // if current display value is 0, replace it, if not add number
   const displayValue = calculatorDisplay.textContent;
