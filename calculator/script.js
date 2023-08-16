@@ -46,15 +46,11 @@ function useOperator(operator) {
   if (!firstValue) {
     firstValue = currentValue;
   } else {
-    console.log(
-      "firstValue",
-      firstValue,
-      "operatorValue",
-      operatorValue,
-      "currentValue",
-      currentValue
-    );
+    console.log(firstValue, operatorValue, currentValue);
+    const calculation = calculate[operatorValue](firstValue, currentValue);
+    console.log("calculation", calculation);
   }
+  // Ready for next value, then store operator:
   awaitingNextValue = true;
   operatorValue = operator;
 }
