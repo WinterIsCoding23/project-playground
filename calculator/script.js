@@ -4,7 +4,7 @@ const inputBtns = document.querySelectorAll("button");
 const clearBtn = document.getElementById("clear-btn");
 
 function sendNumberValue(number) {
-  console.log(number);
+  calculatorDisplay.textContent = number;
 }
 
 // Add event-listeners for numbers, operators, decimal button
