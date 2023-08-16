@@ -52,6 +52,7 @@ function useOperator(operator) {
     console.log(firstValue, operatorValue, currentValue);
     const calculation = calculate[operatorValue](firstValue, currentValue);
     console.log("calculation", calculation);
+    calculatorDisplay.textContent = calculation;
     // next line needed to chain operations:
     firstValue = calculation;
   }
