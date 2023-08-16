@@ -21,6 +21,8 @@ function sendNumberValue(number) {
 }
 
 function addDecimal() {
+  // if operator pressed, DONT add decimal
+  if (awaitingNextValue) return;
   // if no decimal, add one
   if (!calculatorDisplay.textContent.includes(".")) {
     calculatorDisplay.textContent = `${calculatorDisplay.textContent}.`;
@@ -29,6 +31,8 @@ function addDecimal() {
 
 function useOperator(operator) {
   const currentValue = Number(calculatorDisplay.textContent);
+  // Prevent multiple operators
+  if (operatorValue && awaitingNextValue) return;
   // Assign first value if there is no value:
   if (!firstValue) {
     firstValue = currentValue;
