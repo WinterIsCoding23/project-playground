@@ -49,7 +49,7 @@ h2 {
 
 .fas {
   font-size: 50px;
-  margin-right: 40px;
+  /* margin-right: 40px; */
   user-select: none;
 }
 
@@ -62,6 +62,12 @@ h2 {
 #computer .fas,
 #computer .choice {
   color: rgb(235, 43, 52);
+}
+
+/* Needed to prevent #resultText from falling out of the container - simultaneously deleting margin-right-property from .fas */
+#player .fas:last-of-type,
+#computer .fas:last-of-type {
+  margin-right: 0;
 }
 
 .selected {
@@ -101,7 +107,7 @@ h2 {
     margin: 50px 0 25px 25px;
   }
 
-  .far {
+  .fas {
     margin-right: 20px;
   }
 
@@ -125,7 +131,7 @@ h2 {
     margin: 43px 0 25px 20px;
   }
 
-  .far {
+  .fas {
     font-size: 43px;
   }
 
