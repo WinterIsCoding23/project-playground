@@ -53,6 +53,21 @@ h2 {
   user-select: none;
 }
 
+#player .fas,
+#player .choice {
+  color: dodgerblue;
+  cursor: pointer;
+}
+
+#computer .fas,
+#computer .choice {
+  color: rgb(235, 43, 52);
+}
+
+.selected {
+  color: black !important;
+}
+
 .reset-icon {
   font-size: 30px;
   cursor: pointer;
