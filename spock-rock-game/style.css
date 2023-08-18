@@ -26,7 +26,9 @@ body {
 
 .header {
   background: dodgerblue;
-
+  height: 100px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,6 +74,7 @@ h2 {
 /* Media Query: Large Smartphone (Vertical) */
 @media screen and (max-width: 600px) {
   .game-container {
+    width: 95%;
     height: 580px;
   }
 
