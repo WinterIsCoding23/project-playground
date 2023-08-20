@@ -28,9 +28,17 @@ const choices = {
   spock: { name: "Spock", defeats: ["scissors", "rock"] },
 };
 
+let computerChoice = "";
+
 // console.log("allGameIcons", allGameIcons);
 function resetSelected() {
   allGameIcons.forEach((icon) => icon.classList.remove("selected"));
+}
+
+// Random computer choice:
+function computerRandomChoice() {
+  const computerChoiceNumber = Math.random();
+  console.log("computerChoice", computerChoiceNumber);
 }
 
 // Call functions to process turn:
