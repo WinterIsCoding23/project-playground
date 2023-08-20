@@ -33,9 +33,15 @@ function resetSelected() {
   allGameIcons.forEach((icon) => icon.classList.remove("selected"));
 }
 
+// Call functions to process turn:
+function checkResult() {
+  resetSelected();
+  computerRandomChoice();
+}
+
 // Passing player selection values & styling icons:
 function select(playerChoice) {
-  resetSelected();
+  checkResult();
   // console.log(playerChoice);
   // Add 'selected'-styling and update playerChoice:
   switch (playerChoice) {
