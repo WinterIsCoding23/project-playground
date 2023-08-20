@@ -143,3 +143,19 @@ function select(playerChoice) {
       break;
   }
 }
+
+// Reset score & playerChoice and computerChoice
+function resetAll() {
+  playerScoreNumber = 0;
+  computerScoreNumber = 0;
+  playerScoreEl.textContent = playerScoreNumber;
+  computerScoreEl.textContent = computerScoreNumber;
+  playerChoiceEl.textContent = "Na, what will you chose?";
+  computerChoiceEl.textContent = "You can try but you can't win...";
+
+  resultText.textContent = "Shake that hand to start the game...";
+  resetSelected();
+}
+
+// On startup, set initial values
+resetAll();
