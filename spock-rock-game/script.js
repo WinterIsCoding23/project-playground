@@ -1,4 +1,7 @@
 import { startConfetti, stopConfetti, removeConfetti } from "./confetti.js";
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#dynamic_module_loading
+// -> when applied, benefit: modules load only when needed, not from the start
+// -> in this case confetti.js
 
 const playerScoreEl = document.getElementById("playerScore");
 const playerChoiceEl = document.getElementById("playerChoice");
@@ -56,6 +59,9 @@ function resetAll() {
   resultText.textContent = "";
   resetSelected();
 }
+// needed to make resetAll() accessible for index.html
+// Reason: If script.js is declared a module, it is self-contained - its functions are only accessible
+// ...inside the script.js file
 window.resetAll = resetAll;
 
 // Random computer choice:
@@ -163,6 +169,9 @@ function select(playerChoice) {
       break;
   }
 }
+// needed to make select() accessible for index.html
+// Reason: If script.js is declared a module, it is self-contained - its functions are only accessible
+// ...inside the script.js file
 window.select = select;
 
 // On startup, set initial values
