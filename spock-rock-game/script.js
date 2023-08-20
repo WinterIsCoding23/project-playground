@@ -91,7 +91,17 @@ function updateScore(playerChoice) {
     resultText.textContent = "It's a draw!";
   } else {
     const choice = choices[playerChoice];
-    console.log(choice);
+    // console.log(choice);
+    console.log(choice.defeats.indexOf(computerChoice));
+    if (choice.defeats.indexOf(computerChoice) > -1) {
+      resultText.textContent = "You win!";
+      playerScoreNumber++;
+      playerScoreEl.textContent = playerScoreNumber;
+    } else {
+      resultText.textContent = "You lose!";
+      computerScoreNumber++;
+      computerScoreEl.textContent = computerScoreNumber;
+    }
   }
 }
 
