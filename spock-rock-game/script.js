@@ -18,7 +18,7 @@ const computerLizard = document.getElementById("computerLizard");
 const computerSpock = document.getElementById("computerSpock");
 
 // target all icons (except reset-icon):
-const allGameIcons = document.querySelectorAll(".fas-");
+const allGameIcons = document.querySelectorAll(".fas");
 
 const choices = {
   rock: { name: "Rock", defeats: ["scissors", "lizard"] },
@@ -28,8 +28,14 @@ const choices = {
   spock: { name: "Spock", defeats: ["scissors", "rock"] },
 };
 
+// console.log("allGameIcons", allGameIcons);
+function resetSelected() {
+  allGameIcons.forEach((icon) => icon.classList.remove("selected"));
+}
+
 // Passing player selection values & styling icons:
 function select(playerChoice) {
+  resetSelected();
   // console.log(playerChoice);
   // Add 'selected'-styling and update playerChoice:
   switch (playerChoice) {
@@ -39,19 +45,19 @@ function select(playerChoice) {
       break;
     case "paper":
       playerPaper.classList.add("selected");
-      playerChoiceEl.textContent = "--- paper";
+      playerChoiceEl.textContent = "--- Paper";
       break;
     case "scissors":
       playerScissors.classList.add("selected");
-      playerChoiceEl.textContent = "--- scissors";
+      playerChoiceEl.textContent = "--- Scissors";
       break;
     case "lizard":
       playerLizard.classList.add("selected");
-      playerChoiceEl.textContent = "--- lizard";
+      playerChoiceEl.textContent = "--- Lizard";
       break;
     case "spock":
       playerSpock.classList.add("selected");
-      playerChoiceEl.textContent = "--- spock";
+      playerChoiceEl.textContent = "--- Spock";
       break;
     default:
       break;
