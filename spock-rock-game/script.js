@@ -3,7 +3,7 @@ const playerChoiceEl = document.getElementById("playerChoice");
 const computerScoreEl = document.getElementById("computerScore");
 const computerChoiceEl = document.getElementById("computerChoice");
 
-const resultTextEl = document.getElementById("resultText");
+const resultText = document.getElementById("resultText");
 
 const playerRock = document.getElementById("playerRock");
 const playerPaper = document.getElementById("playerPaper");
@@ -87,6 +87,9 @@ function displayComputerChoice() {
 // Check result, increase scores, update resultText:
 function updateScore(playerChoice) {
   console.log(playerChoice, computerChoice);
+  if (playerChoice === computerChoice) {
+    resultText.textContent = "It's a draw!";
+  }
 }
 
 // Call functions to process turn:
