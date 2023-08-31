@@ -6,6 +6,11 @@ const nav3 = document.getElementById("nav-3");
 const nav4 = document.getElementById("nav-4");
 const nav5 = document.getElementById("nav-5");
 
+toggleNav = () => {
+  // toggle: Menu bars open / closed:
+  menuBars.classList.toggle("change");
+};
+
 // Event listeners:
 menuBars.addEventListener("click", toggleNav);
 nav1.addEventListener("click", toggleNav);
