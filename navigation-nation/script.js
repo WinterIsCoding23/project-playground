@@ -13,8 +13,9 @@ toggleNav = () => {
   overlay.classList.toggle("overlay-active");
   if (overlay.classList.contains("overlay-active")) {
     // Animate In-Overlay
-    overlay.classList.add("overlay-slide-right");
-    overlay.classList.remove("overlay-slide-left");
+    // overlay.classList.add("overlay-slide-right");
+    // overlay.classList.remove("overlay-slide-left");
+    overlay.classList.replace("overlay-slide-left", "overlay-slide-right");
     // Animate In-Nav-items
     nav1.classList.remove("slide-out-1");
     nav1.classList.add("slide-in-1");
@@ -28,8 +29,9 @@ toggleNav = () => {
     nav5.classList.add("slide-in-5");
   } else {
     // Animate Out-Overlay
-    overlay.classList.add("overlay-slide-left");
-    overlay.classList.remove("overlay-slide-right");
+    // overlay.classList.add("overlay-slide-left");
+    // overlay.classList.remove("overlay-slide-right");
+    overlay.classList.replace("overlay-slide-right", "overlay-slide-left");
     // Animate Out-Nav-items
     nav1.classList.remove("slide-in-1");
     nav1.classList.add("slide-out-1");
