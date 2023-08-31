@@ -172,10 +172,10 @@ nav li:nth-of-type(5) {
 
 @keyframes slide-out {
   from {
-    transform: translateX(-100%);
+    transform: translateX(0);
   }
   to {
-    transform: translateX(0);
+    transform: translateX(-100%);
   }
 }
 
