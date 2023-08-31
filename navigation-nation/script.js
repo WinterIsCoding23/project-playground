@@ -8,6 +8,16 @@ const nav5 = document.getElementById("nav-5");
 
 const navItems = [nav1, nav2, nav3, nav4, nav5];
 
+// Control Navigation-Animation:
+navAnimation = (direction1, direction2) => {
+  navItems.forEach((nav, i) => {
+    nav.classList.replace(
+      `slide-${direction1}-${i}`,
+      `slide-${direction2}-${i}`
+    );
+  });
+};
+
 toggleNav = () => {
   // toggle: Menu bars open / closed:
   menuBars.classList.toggle("change");
