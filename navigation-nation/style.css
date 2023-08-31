@@ -25,9 +25,9 @@ body {
 }
 
 /* --- Navigation Menu ------------------------------ */
-/* Overlay */ 
-.overlay{
-  position: fixed; 
+/* Overlay */
+.overlay {
+  position: fixed;
   z-index: 9;
   top: 0;
   left: 0;
@@ -38,36 +38,52 @@ body {
 
 /* Nav Menu-Items */
 nav,
-nav ul{
-  height: 100vh; 
+nav ul {
+  height: 100vh;
   padding: 0;
   margin: 0;
 }
 
-nav ul{
+nav ul {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
   list-style: none;
 }
 
-nav li:nth-of-type(1){
+nav ul li {
+  height: 20%;
+  overflow: hidden;
+}
+
+nav li a {
+  display: block;
+  position: relative;
+  top: 45%;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 4px;
+}
+
+nav li:nth-of-type(1) {
   background-color: var(--navColor1);
 }
 
-nav li:nth-of-type(2){
+nav li:nth-of-type(2) {
   background-color: var(--navColor2);
 }
 
-nav li:nth-of-type(3){
+nav li:nth-of-type(3) {
   background-color: var(--navColor3);
 }
 
-nav li:nth-of-type(4){
+nav li:nth-of-type(4) {
   background-color: var(--navColor4);
 }
 
-nav li:nth-of-type(5){
+nav li:nth-of-type(5) {
   background-color: var(--navColor5);
 }
 
